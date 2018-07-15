@@ -24213,7 +24213,7 @@ exports = module.exports = __webpack_require__(76)(true);
 
 
 // module
-exports.push([module.i, ".nav___2oWXJ ul {\n  list-style: none;\n}\n.nav___2oWXJ ul li {\n  display: inline-block;\n}\n.nav___2oWXJ ul li .logo___1M7Fi {\n  width: 50px;\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/main.less"],"names":[],"mappings":"AAAA;EACE,iBAAiB;CAClB;AACD;EACE,sBAAsB;CACvB;AACD;EACE,YAAY;CACb","file":"main.less","sourcesContent":[".nav ul {\n  list-style: none;\n}\n.nav ul li {\n  display: inline-block;\n}\n.nav ul li .logo {\n  width: 50px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "html {\n  font-family: 'Ubuntu', sans-serif;\n}\n.nav___2oWXJ ul {\n  list-style: none;\n}\n.nav___2oWXJ ul li {\n  display: inline-block;\n}\n.nav___2oWXJ ul li .logo___1M7Fi {\n  width: 50px;\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/main.less"],"names":[],"mappings":"AAAA;EACE,kCAAkC;CACnC;AACD;EACE,iBAAiB;CAClB;AACD;EACE,sBAAsB;CACvB;AACD;EACE,YAAY;CACb","file":"main.less","sourcesContent":["html {\n  font-family: 'Ubuntu', sans-serif;\n}\n.nav ul {\n  list-style: none;\n}\n.nav ul li {\n  display: inline-block;\n}\n.nav ul li .logo {\n  width: 50px;\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
@@ -24910,8 +24910,16 @@ var Contact = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'contact' },
-				_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-linkedin fa-3x' }),
-				_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-github-square fa-3x' })
+				_react2.default.createElement(
+					'a',
+					{ href: 'https://www.linkedin.com/in/junwenchen/', target: '_blank' },
+					_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-linkedin fa-3x' })
+				),
+				_react2.default.createElement(
+					'a',
+					{ href: 'https://github.com/MMMayC', target: '_blank' },
+					_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-github-square fa-3x' })
+				)
 			);
 		}
 	}]);
