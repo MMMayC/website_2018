@@ -1,6 +1,7 @@
 var path = require('path');
 const webpack = require('webpack');
 module.exports  = {
+    mode: 'none',
     entry: './src/app.js',
     output: {
         filename: 'bundle.js',
@@ -8,13 +9,34 @@ module.exports  = {
     },
     watch: true,
     module:{
-        loaders: [{
-            test:/\.js$/,
-            exclude:/node_modules/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['react', 'env','stage-1']
+        rules: [
+            {
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react', 'env','stage-1']
+                }
+            },
+            {
+                test: /\.less$/,
+                use: [
+                  {
+                    loader: "style-loader"
+                  },
+                  {
+                    loader: "css-loader",
+                    options: {
+                      sourceMap: true,
+                      modules: true,
+                      localIdentName: "[local]___[hash:base64:5]"
+                    }
+                  },
+                  {
+                    loader: "less-loader"
+                  }
+                ]
             }
-        }]
+        ]
     }
 }
