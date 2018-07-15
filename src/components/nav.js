@@ -7,7 +7,7 @@ class Nav extends React.Component {
 		return(
 			<div className={style.nav}>
 				<ul>
-					<li><Link to='/'></Link></li>
+					<li><Link to='/'><img src='image/jc_logo.svg' className={style.logo} /></Link></li>
 					<li><Link to='/about'>About</Link></li>
 					<li><Link to='/works'>Works</Link></li>
 					<li><Link to='/contact'>Contact</Link></li>

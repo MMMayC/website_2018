@@ -24022,23 +24022,23 @@ var _nav = __webpack_require__(66);
 
 var _nav2 = _interopRequireDefault(_nav);
 
-var _footer = __webpack_require__(72);
+var _footer = __webpack_require__(71);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _home = __webpack_require__(73);
+var _home = __webpack_require__(72);
 
 var _home2 = _interopRequireDefault(_home);
 
-var _about = __webpack_require__(74);
+var _about = __webpack_require__(73);
 
 var _about2 = _interopRequireDefault(_about);
 
-var _contact = __webpack_require__(75);
+var _contact = __webpack_require__(74);
 
 var _contact2 = _interopRequireDefault(_contact);
 
-var _works = __webpack_require__(76);
+var _works = __webpack_require__(75);
 
 var _works2 = _interopRequireDefault(_works);
 
@@ -24136,7 +24136,11 @@ var Nav = function (_React$Component) {
 					_react2.default.createElement(
 						'li',
 						null,
-						_react2.default.createElement(_reactRouterDom.Link, { to: '/' })
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ to: '/' },
+							_react2.default.createElement('img', { src: 'image/jc_logo.svg', className: _main2.default.logo })
+						)
 					),
 					_react2.default.createElement(
 						'li',
@@ -24194,7 +24198,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(70)(content, options);
+var update = __webpack_require__(69)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -24204,100 +24208,21 @@ if(false) {}
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(69)(true);
+exports = module.exports = __webpack_require__(76)(true);
 // imports
 
 
 // module
-exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"main.less","sourceRoot":""}]);
+exports.push([module.i, ".nav___2oWXJ ul {\n  list-style: none;\n}\n.nav___2oWXJ ul li {\n  display: inline-block;\n}\n.nav___2oWXJ ul li .logo___1M7Fi {\n  width: 50px;\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/main.less"],"names":[],"mappings":"AAAA;EACE,iBAAiB;CAClB;AACD;EACE,sBAAsB;CACvB;AACD;EACE,YAAY;CACb","file":"main.less","sourcesContent":[".nav ul {\n  list-style: none;\n}\n.nav ul li {\n  display: inline-block;\n}\n.nav ul li .logo {\n  width: 50px;\n}\n"],"sourceRoot":""}]);
 
 // exports
-
+exports.locals = {
+	"nav": "nav___2oWXJ",
+	"logo": "logo___1M7Fi"
+};
 
 /***/ }),
 /* 69 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -24363,7 +24288,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(71);
+var	fixUrls = __webpack_require__(70);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -24683,7 +24608,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports) {
 
 
@@ -24778,7 +24703,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24828,7 +24753,7 @@ var Footer = function (_React$Component) {
 exports.default = Footer;
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24867,7 +24792,21 @@ var Home = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'home' },
-				'home'
+				_react2.default.createElement(
+					'h1',
+					null,
+					'Junwen Chen'
+				),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'A passionate Web Developer & Experience Designer'
+				),
+				_react2.default.createElement(
+					'button',
+					null,
+					'More About Me'
+				)
 			);
 		}
 	}]);
@@ -24878,7 +24817,7 @@ var Home = function (_React$Component) {
 exports.default = Home;
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24928,7 +24867,7 @@ var About = function (_React$Component) {
 exports.default = About;
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24943,6 +24882,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _contact = __webpack_require__(77);
+
+var _contact2 = _interopRequireDefault(_contact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24967,7 +24910,8 @@ var Contact = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'contact' },
-				'contact'
+				_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-linkedin fa-3x' }),
+				_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-github-square fa-3x' })
 			);
 		}
 	}]);
@@ -24978,7 +24922,7 @@ var Contact = function (_React$Component) {
 exports.default = Contact;
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25026,6 +24970,129 @@ var Works = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Works;
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(78);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(69)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(76)(true);
+// imports
+
+
+// module
+exports.push([module.i, ".social_icon___3nRpk {\n  color: #eb285f;\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/contact.less"],"names":[],"mappings":"AAAA;EACE,eAAe;CAChB","file":"contact.less","sourcesContent":[".social_icon {\n  color: #eb285f;\n}\n"],"sourceRoot":""}]);
+
+// exports
+exports.locals = {
+	"social_icon": "social_icon___3nRpk"
+};
 
 /***/ })
 /******/ ]);
