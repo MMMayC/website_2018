@@ -1,7 +1,19 @@
 @import './variables.less';
+@import './about.less';
+@import './contact.less';
+@import './home.less';
+@import './works.less';
 
-html {
+html, body, #app {
 	font-family: 'Ubuntu', sans-serif;
+	color: @color_dark;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	text-align: center;
 }
 
 a {
@@ -9,19 +21,68 @@ a {
 	color: @color_pink_primary;
 }
 
+.container {
+	height: 100%;
+	padding: 10px;
+}
+
 .content {
-	min-height: 600px;
+	min-height: 80%;
 }
 
 .nav {
+	.logo {
+		width: 50px;
+		display: inline-block;
+	}
 	ul {
+		display: inline-block;
 		list-style: none;
 		padding: 0;
+		margin: 0;
+		float: right;
 		li {
+			color: @color_pink_primary;
 			display: inline-block;
-			.logo {
-				width: 50px;
+			font-size: 120%;
+		}
+	}
+	.menu {
+		&_mobile {
+			display: block;
+			&_close {
+				display: none;
 			}
-		}	
+		}
+		&_item {
+			display: none;
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+}
+
+.display_block {
+	display: block !important;
+}
+.display_none {
+	display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+	.content {
+		min-height: 87%;
+	}
+	.nav {
+		.menu {
+			&_mobile {
+				display: none;
+			}
+			&_item {
+				display: inline-block;
+			}
+		}
 	}
 }
