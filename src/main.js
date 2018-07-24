@@ -6,18 +6,21 @@ import Home from './components/home.js';
 import About from './components/about.js';
 import Contact from './components/contact.js';
 import Works from './components/works.js';
+import style from './style/main.less';
 
 class Main extends React.Component {
 	render(){
 		return(
-			<div>
+			<div className={style.container}>
 				<Nav />
-			    <Switch>
-					<Route exact path='/' component={Home}/>
-					<Route path='/about' component={About}/>
-					<Route path='/works' component={Works}/>
-					<Route path='/contact' component={Contact}/>
-			    </Switch>
+					<div className='content'>
+					    <Switch>
+							<Route exact path='/' component={Home}/>
+							<Route path='/about' component={About}/>
+							<Route path='/works' component={Works}/>
+							<Route path='/contact' component={Contact}/>
+					    </Switch>
+				    </div>
 				<Footer />
 			</div>
 		)

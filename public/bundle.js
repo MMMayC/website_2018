@@ -24022,25 +24022,29 @@ var _nav = __webpack_require__(66);
 
 var _nav2 = _interopRequireDefault(_nav);
 
-var _footer = __webpack_require__(71);
+var _footer = __webpack_require__(72);
 
 var _footer2 = _interopRequireDefault(_footer);
 
-var _home = __webpack_require__(72);
+var _home = __webpack_require__(73);
 
 var _home2 = _interopRequireDefault(_home);
 
-var _about = __webpack_require__(73);
+var _about = __webpack_require__(76);
 
 var _about2 = _interopRequireDefault(_about);
 
-var _contact = __webpack_require__(74);
+var _contact = __webpack_require__(77);
 
 var _contact2 = _interopRequireDefault(_contact);
 
-var _works = __webpack_require__(75);
+var _works = __webpack_require__(80);
 
 var _works2 = _interopRequireDefault(_works);
+
+var _main = __webpack_require__(67);
+
+var _main2 = _interopRequireDefault(_main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24064,15 +24068,19 @@ var Main = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ className: _main2.default.container },
 				_react2.default.createElement(_nav2.default, null),
 				_react2.default.createElement(
-					_reactRouterDom.Switch,
-					null,
-					_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
-					_react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
-					_react2.default.createElement(_reactRouterDom.Route, { path: '/works', component: _works2.default }),
-					_react2.default.createElement(_reactRouterDom.Route, { path: '/contact', component: _contact2.default })
+					'div',
+					{ className: 'content' },
+					_react2.default.createElement(
+						_reactRouterDom.Switch,
+						null,
+						_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
+						_react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
+						_react2.default.createElement(_reactRouterDom.Route, { path: '/works', component: _works2.default }),
+						_react2.default.createElement(_reactRouterDom.Route, { path: '/contact', component: _contact2.default })
+					)
 				),
 				_react2.default.createElement(_footer2.default, null)
 			);
@@ -24103,11 +24111,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(22);
 
-var _main = __webpack_require__(67);
-
-var _main2 = _interopRequireDefault(_main);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -24118,55 +24124,78 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Nav = function (_React$Component) {
 	_inherits(Nav, _React$Component);
 
-	function Nav() {
+	function Nav(props) {
 		_classCallCheck(this, Nav);
 
-		return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+
+		_this.toggle_menu_mobile = _this.toggle_menu_mobile.bind(_this);
+		return _this;
 	}
 
 	_createClass(Nav, [{
+		key: 'toggle_menu_mobile',
+		value: function toggle_menu_mobile() {
+			var menu_items = document.getElementsByClassName('menu_list_item');
+			[].concat(_toConsumableArray(menu_items)).forEach(function (menu_item) {
+				menu_item.classList.toggle('display_block');
+			});
+			document.getElementById('menu_mobile').classList.toggle('display_none');
+			document.getElementById('menu_mobile_close').classList.toggle('display_block');
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				{ className: _main2.default.nav },
+				{ className: 'nav' },
 				_react2.default.createElement(
-					'ul',
-					null,
+					_reactRouterDom.Link,
+					{ to: '/' },
+					_react2.default.createElement('img', { src: 'image/jc_logo.svg', className: 'logo' })
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'menu' },
 					_react2.default.createElement(
-						'li',
-						null,
-						_react2.default.createElement(
-							_reactRouterDom.Link,
-							{ to: '/' },
-							_react2.default.createElement('img', { src: 'image/jc_logo.svg', className: _main2.default.logo })
-						)
+						'div',
+						{ className: 'menu_mobile', id: 'menu_mobile', onClick: this.toggle_menu_mobile },
+						_react2.default.createElement('i', { className: 'fas fa-bars' })
 					),
 					_react2.default.createElement(
-						'li',
-						null,
-						_react2.default.createElement(
-							_reactRouterDom.Link,
-							{ to: '/about' },
-							'About'
-						)
+						'div',
+						{ className: 'menu_mobile menu_mobile_close', id: 'menu_mobile_close', onClick: this.toggle_menu_mobile },
+						_react2.default.createElement('i', { className: 'fas fa-times' })
 					),
 					_react2.default.createElement(
-						'li',
-						null,
+						'ul',
+						{ className: 'menu_list' },
 						_react2.default.createElement(
-							_reactRouterDom.Link,
-							{ to: '/works' },
-							'Works'
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						null,
+							'li',
+							{ className: 'menu_list_item' },
+							_react2.default.createElement(
+								_reactRouterDom.Link,
+								{ to: '/about' },
+								'About'
+							)
+						),
 						_react2.default.createElement(
-							_reactRouterDom.Link,
-							{ to: '/contact' },
-							'Contact'
+							'li',
+							{ className: 'menu_list_item' },
+							_react2.default.createElement(
+								_reactRouterDom.Link,
+								{ to: '/works' },
+								'Works'
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							{ className: 'menu_list_item' },
+							_react2.default.createElement(
+								_reactRouterDom.Link,
+								{ to: '/contact' },
+								'Contact'
+							)
 						)
 					)
 				)
@@ -24198,7 +24227,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(69)(content, options);
+var update = __webpack_require__(70)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -24208,21 +24237,124 @@ if(false) {}
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(76)(true);
+exports = module.exports = __webpack_require__(69)(true);
 // imports
 
 
 // module
-exports.push([module.i, "html {\n  font-family: 'Ubuntu', sans-serif;\n}\n.nav___2oWXJ ul {\n  list-style: none;\n}\n.nav___2oWXJ ul li {\n  display: inline-block;\n}\n.nav___2oWXJ ul li .logo___1M7Fi {\n  width: 50px;\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/main.less"],"names":[],"mappings":"AAAA;EACE,kCAAkC;CACnC;AACD;EACE,iBAAiB;CAClB;AACD;EACE,sBAAsB;CACvB;AACD;EACE,YAAY;CACb","file":"main.less","sourcesContent":["html {\n  font-family: 'Ubuntu', sans-serif;\n}\n.nav ul {\n  list-style: none;\n}\n.nav ul li {\n  display: inline-block;\n}\n.nav ul li .logo {\n  width: 50px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".about .profile_photo {\n  width: 100%;\n}\n@media screen and (min-width: 768px) {\n  .about .profile_photo {\n    width: 300px;\n  }\n}\n.contact .email_wrapper .email {\n  display: block;\n  width: 210px;\n  text-align: center;\n  margin: 0 auto;\n}\n.contact .social_link {\n  padding: 5px;\n  display: inline-block;\n}\n.contact .social_link_wrapper {\n  width: 105px;\n  display: block;\n  margin: 0 auto;\n}\n.home .button_wrapper .more_about_me {\n  border: 1px solid #eb285f;\n  display: block;\n  margin: 0 auto;\n  padding: 10px 0;\n  text-align: center;\n  width: 180px;\n  text-transform: uppercase;\n}\n.home .button_wrapper .more_about_me:hover,\n.home .button_wrapper .more_about_me:focus {\n  color: white;\n  background-color: #eb285f;\n}\nhtml,\nbody,\n#app {\n  font-family: 'Ubuntu', sans-serif;\n  color: #1B272D;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nh1,\nh2,\nh3,\nh4 {\n  text-align: center;\n}\na {\n  text-decoration: none;\n  color: #eb285f;\n}\n.container {\n  height: 100%;\n  padding: 10px;\n}\n.content {\n  min-height: 80%;\n}\n.nav .logo {\n  width: 50px;\n  display: inline-block;\n}\n.nav .menu {\n  display: inline-block;\n  float: right;\n  color: #eb285f;\n  font-size: 120%;\n}\n.nav .menu_mobile {\n  display: block;\n  float: right;\n  margin: 15px 0;\n}\n.nav .menu_mobile_close {\n  display: none;\n}\n.nav .menu_list {\n  position: absolute;\n  right: 0;\n  width: 100%;\n  top: 65px;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  background-color: white;\n}\n.nav .menu_list_item {\n  display: none;\n  text-align: center;\n  margin: 15px 10px;\n}\n.footer {\n  text-align: center;\n}\n.display_block {\n  display: block !important;\n}\n.display_none {\n  display: none !important;\n}\n@media screen and (min-width: 768px) {\n  .content {\n    min-height: 87%;\n  }\n  .nav .menu_mobile {\n    display: none;\n  }\n  .nav .menu_list {\n    position: relative;\n    top: 0;\n  }\n  .nav .menu_list_item {\n    display: inline-block;\n  }\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/main.less"],"names":[],"mappings":"AAAA;EACE,YAAY;CACb;AACD;EACE;IACE,aAAa;GACd;CACF;AACD;EACE,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,eAAe;CAChB;AACD;EACE,aAAa;EACb,sBAAsB;CACvB;AACD;EACE,aAAa;EACb,eAAe;EACf,eAAe;CAChB;AACD;EACE,0BAA0B;EAC1B,eAAe;EACf,eAAe;EACf,gBAAgB;EAChB,mBAAmB;EACnB,aAAa;EACb,0BAA0B;CAC3B;AACD;;EAEE,aAAa;EACb,0BAA0B;CAC3B;AACD;;;EAGE,kCAAkC;EAClC,eAAe;EACf,aAAa;EACb,WAAW;EACX,UAAU;CACX;AACD;;;;EAIE,mBAAmB;CACpB;AACD;EACE,sBAAsB;EACtB,eAAe;CAChB;AACD;EACE,aAAa;EACb,cAAc;CACf;AACD;EACE,gBAAgB;CACjB;AACD;EACE,YAAY;EACZ,sBAAsB;CACvB;AACD;EACE,sBAAsB;EACtB,aAAa;EACb,eAAe;EACf,gBAAgB;CACjB;AACD;EACE,eAAe;EACf,aAAa;EACb,eAAe;CAChB;AACD;EACE,cAAc;CACf;AACD;EACE,mBAAmB;EACnB,SAAS;EACT,YAAY;EACZ,UAAU;EACV,iBAAiB;EACjB,WAAW;EACX,UAAU;EACV,wBAAwB;CACzB;AACD;EACE,cAAc;EACd,mBAAmB;EACnB,kBAAkB;CACnB;AACD;EACE,mBAAmB;CACpB;AACD;EACE,0BAA0B;CAC3B;AACD;EACE,yBAAyB;CAC1B;AACD;EACE;IACE,gBAAgB;GACjB;EACD;IACE,cAAc;GACf;EACD;IACE,mBAAmB;IACnB,OAAO;GACR;EACD;IACE,sBAAsB;GACvB;CACF","file":"main.less","sourcesContent":[".about .profile_photo {\n  width: 100%;\n}\n@media screen and (min-width: 768px) {\n  .about .profile_photo {\n    width: 300px;\n  }\n}\n.contact .email_wrapper .email {\n  display: block;\n  width: 210px;\n  text-align: center;\n  margin: 0 auto;\n}\n.contact .social_link {\n  padding: 5px;\n  display: inline-block;\n}\n.contact .social_link_wrapper {\n  width: 105px;\n  display: block;\n  margin: 0 auto;\n}\n.home .button_wrapper .more_about_me {\n  border: 1px solid #eb285f;\n  display: block;\n  margin: 0 auto;\n  padding: 10px 0;\n  text-align: center;\n  width: 180px;\n  text-transform: uppercase;\n}\n.home .button_wrapper .more_about_me:hover,\n.home .button_wrapper .more_about_me:focus {\n  color: white;\n  background-color: #eb285f;\n}\nhtml,\nbody,\n#app {\n  font-family: 'Ubuntu', sans-serif;\n  color: #1B272D;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nh1,\nh2,\nh3,\nh4 {\n  text-align: center;\n}\na {\n  text-decoration: none;\n  color: #eb285f;\n}\n.container {\n  height: 100%;\n  padding: 10px;\n}\n.content {\n  min-height: 80%;\n}\n.nav .logo {\n  width: 50px;\n  display: inline-block;\n}\n.nav .menu {\n  display: inline-block;\n  float: right;\n  color: #eb285f;\n  font-size: 120%;\n}\n.nav .menu_mobile {\n  display: block;\n  float: right;\n  margin: 15px 0;\n}\n.nav .menu_mobile_close {\n  display: none;\n}\n.nav .menu_list {\n  position: absolute;\n  right: 0;\n  width: 100%;\n  top: 65px;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  background-color: white;\n}\n.nav .menu_list_item {\n  display: none;\n  text-align: center;\n  margin: 15px 10px;\n}\n.footer {\n  text-align: center;\n}\n.display_block {\n  display: block !important;\n}\n.display_none {\n  display: none !important;\n}\n@media screen and (min-width: 768px) {\n  .content {\n    min-height: 87%;\n  }\n  .nav .menu_mobile {\n    display: none;\n  }\n  .nav .menu_list {\n    position: relative;\n    top: 0;\n  }\n  .nav .menu_list_item {\n    display: inline-block;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
-	"nav": "nav___2oWXJ",
-	"logo": "logo___1M7Fi"
+	"about": "about",
+	"profile_photo": "profile_photo",
+	"contact": "contact",
+	"email_wrapper": "email_wrapper",
+	"email": "email",
+	"social_link": "social_link",
+	"social_link_wrapper": "social_link_wrapper",
+	"home": "home",
+	"button_wrapper": "button_wrapper",
+	"more_about_me": "more_about_me",
+	"app": "app",
+	"container": "container",
+	"content": "content",
+	"nav": "nav",
+	"logo": "logo",
+	"menu": "menu",
+	"menu_mobile": "menu_mobile",
+	"menu_mobile_close": "menu_mobile_close",
+	"menu_list": "menu_list",
+	"menu_list_item": "menu_list_item",
+	"footer": "footer",
+	"display_block": "display_block",
+	"display_none": "display_none"
 };
 
 /***/ }),
 /* 69 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -24288,7 +24420,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(70);
+var	fixUrls = __webpack_require__(71);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -24608,7 +24740,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 
@@ -24703,7 +24835,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24742,7 +24874,7 @@ var Footer = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'footer' },
-				'\xA9 Junwen Chen 2018'
+				'\xA92018, Junwen Chen'
 			);
 		}
 	}]);
@@ -24753,7 +24885,7 @@ var Footer = function (_React$Component) {
 exports.default = Footer;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24768,6 +24900,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(22);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24800,12 +24934,16 @@ var Home = function (_React$Component) {
 				_react2.default.createElement(
 					'h2',
 					null,
-					'A passionate Web Developer & Experience Designer'
+					'A Passionate Web Developer & Experience Designer'
 				),
 				_react2.default.createElement(
-					'button',
-					null,
-					'More About Me'
+					'div',
+					{ className: 'button_wrapper' },
+					_react2.default.createElement(
+						_reactRouterDom.Link,
+						{ to: '/about', className: 'more_about_me' },
+						'More About Me'
+					)
 				)
 			);
 		}
@@ -24817,7 +24955,9 @@ var Home = function (_React$Component) {
 exports.default = Home;
 
 /***/ }),
-/* 73 */
+/* 74 */,
+/* 75 */,
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24856,7 +24996,31 @@ var About = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'about' },
-				'about'
+				_react2.default.createElement(
+					'div',
+					{ className: 'profile' },
+					_react2.default.createElement('img', { className: 'profile_photo', src: '/image/profile_2018_square.jpg' }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'profile_intro' },
+						_react2.default.createElement(
+							'p',
+							null,
+							'Hi, I\'m Junwen. I\'m a Web Developer and Experience Designer.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'I think design and development are both essential in delivering solutions to users, in which one could not exist without the other. I\u2019m passionate about building empathy with people, and designing satisfying experiences for them. I also enjoy developing a lot as it makes things happen and brings design to life.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'My skills cross a broad range and I\'m always up for learning new things.'
+						)
+					)
+				),
+				_react2.default.createElement('div', null)
 			);
 		}
 	}]);
@@ -24867,7 +25031,7 @@ var About = function (_React$Component) {
 exports.default = About;
 
 /***/ }),
-/* 74 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24882,10 +25046,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _contact = __webpack_require__(77);
-
-var _contact2 = _interopRequireDefault(_contact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24911,14 +25071,55 @@ var Contact = function (_React$Component) {
 				'div',
 				{ className: 'contact' },
 				_react2.default.createElement(
-					'a',
-					{ href: 'https://www.linkedin.com/in/junwenchen/', target: '_blank' },
-					_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-linkedin fa-3x' })
+					'div',
+					null,
+					_react2.default.createElement(
+						'h4',
+						null,
+						'If anything here interests you, I\'d love to hear from you.'
+					),
+					_react2.default.createElement(
+						'h3',
+						null,
+						'EMAIL'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'email_wrapper' },
+						_react2.default.createElement(
+							'a',
+							{ href: 'mailto:mayjunwenchen@gmail.com', className: 'email' },
+							'mayjunwenchen@gmail.com'
+						)
+					)
 				),
 				_react2.default.createElement(
-					'a',
-					{ href: 'https://github.com/MMMayC', target: '_blank' },
-					_react2.default.createElement('i', { className: _contact2.default.social_icon + ' fab fa-github-square fa-3x' })
+					'div',
+					null,
+					_react2.default.createElement(
+						'h4',
+						null,
+						'or'
+					),
+					_react2.default.createElement(
+						'h3',
+						null,
+						'FIND ME ON'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'social_link_wrapper' },
+						_react2.default.createElement(
+							'a',
+							{ className: 'social_link', href: 'https://www.linkedin.com/in/junwenchen/', target: '_blank' },
+							_react2.default.createElement('i', { className: 'fab fa-linkedin fa-3x' })
+						),
+						_react2.default.createElement(
+							'a',
+							{ className: 'social_link', href: 'https://github.com/MMMayC', target: '_blank' },
+							_react2.default.createElement('i', { className: 'fab fa-github-square fa-3x' })
+						)
+					)
 				)
 			);
 		}
@@ -24930,7 +25131,9 @@ var Contact = function (_React$Component) {
 exports.default = Contact;
 
 /***/ }),
-/* 75 */
+/* 78 */,
+/* 79 */,
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24978,129 +25181,6 @@ var Works = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Works;
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(78);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(69)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(76)(true);
-// imports
-
-
-// module
-exports.push([module.i, ".social_icon___3nRpk {\n  color: #eb285f;\n}\n", "", {"version":3,"sources":["/Users/junwenchen/Documents/javascript/website_2018/src/style/contact.less"],"names":[],"mappings":"AAAA;EACE,eAAe;CAChB","file":"contact.less","sourcesContent":[".social_icon {\n  color: #eb285f;\n}\n"],"sourceRoot":""}]);
-
-// exports
-exports.locals = {
-	"social_icon": "social_icon___3nRpk"
-};
 
 /***/ })
 /******/ ]);
