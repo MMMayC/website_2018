@@ -10,9 +10,6 @@ html, body, #app {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-}
-
-h1, h2, h3, h4 {
 	text-align: center;
 }
 
@@ -28,9 +25,11 @@ a {
 
 .content {
 	min-height: 80%;
+	box-sizing: border-box;
 }
 
 .nav {
+	text-align: left;
 	.logo {
 		width: 50px;
 		display: inline-block;
@@ -66,6 +65,23 @@ a {
 	}
 }
 
+.button_wrapper {
+	.button {
+		border: 1px solid @color_pink_primary;
+		display: block;
+		margin: 0 auto;
+		padding: 10px 0;
+		text-align: center;
+		width: 180px;
+		text-transform: uppercase;
+
+		&:hover, &:focus {
+			color: white;
+			background-color: @color_pink_primary;
+		}
+	}
+}
+
 .footer {
 	text-align: center;
 }
@@ -80,6 +96,7 @@ a {
 @media screen and (min-width: @mobile_breakpoint) {
 	.content {
 		min-height: 87%;
+		padding: 50px 0 0;
 	}
 	.nav {
 		.menu {

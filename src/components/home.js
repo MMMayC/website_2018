@@ -8,7 +8,7 @@ class Home extends React.Component {
 				<h1>Junwen Chen</h1>
 				<h2>A Passionate Web Developer & Experience Designer</h2>
 				<div className='button_wrapper'>
-					<Link to='/about' className='more_about_me'>More About Me</Link>
+					<Link to='/about' className='button'>More About Me</Link>
 				</div>
 			</div>
 		)
