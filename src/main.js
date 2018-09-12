@@ -6,14 +6,14 @@ import Home from './components/home.js';
 import About from './components/about.js';
 import Contact from './components/contact.js';
 import Works from './components/works.js';
-import style from './style/main.less';
+import style from './style/index.less';
 
 class Main extends React.Component {
 	render(){
 		return(
-			<div className={style.container}>
+			<div className='Container'>
 				<Nav />
-					<div className='content'>
+					<div className='Content'>
 					    <Switch>
 							<Route exact path='/' component={Home}/>
 							<Route path='/about' component={About}/>

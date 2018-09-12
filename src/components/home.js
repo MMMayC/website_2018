@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Button from './button.js';
 
 class Home extends React.Component {
 	render(){
@@ -7,9 +7,7 @@ class Home extends React.Component {
 			<div className='home'>
 				<h1>Junwen Chen</h1>
 				<h2>A Passionate Web Developer & Experience Designer</h2>
-				<div className='button_wrapper'>
-					<Link to='/about' className='button'>More About Me</Link>
-				</div>
+				<Button link='/about' copy='More About Me' />
 			</div>
 		)
 	}

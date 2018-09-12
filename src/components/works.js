@@ -9,8 +9,8 @@ class Works extends React.Component {
 					<a href='/media/portfolio_junwenchen.pdf' target='_blank'><i className="fas fa-file-pdf"></i> View Portfolio</a>
 				</div>
 				<br />
-				<div className='button_wrapper'>
-					<Link to='/contact' className='button'>Contact Me</Link>
+				<div className='button'>
+					<Link to='/contact' className='button_link'>Contact Me</Link>
 				</div>
 			</div>
 		)
