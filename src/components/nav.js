@@ -4,31 +4,39 @@ import { Link } from 'react-router-dom';
 class Nav extends React.Component {
 	constructor(props) {
 		super(props);
-		this.toggle_menu_mobile = this.toggle_menu_mobile.bind(this);
+		this.toggleMenuMobile = this.toggleMenuMobile.bind(this);
+		this.toggleMenuItemActive = this.toggleMenuItemActive.bind(this);
 	}
-	toggle_menu_mobile(){
-		let menu_items = document.getElementsByClassName('menu_list_item');
-		[...menu_items].forEach((menu_item) => {
-			menu_item.classList.toggle('display_block');
+	toggleMenuMobile() {
+		let menuItems = document.getElementsByClassName('Menu-List-Item');
+		[...menuItems].forEach((menuItem) => {
+			menuItem.classList.toggle('Display--block');
 		});
-		document.getElementById('menu_mobile').classList.toggle('display_none');
-		document.getElementById('menu_mobile_close').classList.toggle('display_block');
+		document.getElementById('MenuMobile').classList.toggle('Display--none');
+		document.getElementById('MenuMobileClose').classList.toggle('Display--block');
 	}
+	toggleMenuItemActive = (e) => {
+		let currentActive = document.getElementsByClassName('Menu-List-Item--active');
+		currentActive[0].classList.remove('Menu-List-Item--active');
+		e.target.classList.add('Menu-List-Item--active');
+	}
+
 	render() {
 		return(
 			<div className='Nav'>
 				<Link to='/'><img src='media/jc_logo.svg' className='logo' /></Link>
-				<div className='menu'>
-					<div className='menu_mobile' id='menu_mobile' onClick={this.toggle_menu_mobile}>
+				<div className='Menu'>
+					<div className='Menu-Mobile' id='MenuMobile' onClick={this.toggleMenuMobile}>
 						<i className="fas fa-bars"></i>
 					</div>
-					<div className='menu_mobile menu_mobile_close' id='menu_mobile_close' onClick={this.toggle_menu_mobile}>
+					<div className='Menu-Mobile Menu-Mobile-Close' id='MenuMobileClose' onClick={this.toggleMenuMobile}>
 						<i className="fas fa-times"></i>
 					</div>
-					<ul className='menu_list'>
-						<li className='menu_list_item'><Link to='/about'>About</Link></li>
-						<li className='menu_list_item'><Link to='/works'>Works</Link></li>
-						<li className='menu_list_item'><Link to='/contact'>Contact</Link></li>
+					<ul className='Menu-List'>
+						<li><Link className='Menu-List-Item Menu-List-Item--active' onClick={this.toggleMenuItemActive} to='/'>Home</Link></li>
+						<li><Link className='Menu-List-Item' onClick={this.toggleMenuItemActive} to='/about'>About</Link></li>
+						<li><Link className='Menu-List-Item' onClick={this.toggleMenuItemActive} to='/works'>Works</Link></li>
+						<li><Link className='Menu-List-Item' onClick={this.toggleMenuItemActive} to='/contact'>Contact</Link></li>
 					</ul>
 				</div>
 			</div>

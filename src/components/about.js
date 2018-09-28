@@ -13,7 +13,10 @@ class About extends React.Component {
 						<p>My skills cross a broad range and I'm always up for learning new things.</p>
 					</div>
 					<div className='prifile_resume'>
-						<a href='/media/resume_junwenchen.pdf' target='_blank'><i className="fas fa-file-pdf"></i> View Resume</a>
+						<a href='/media/resume_junwenchen.pdf' target='_blank'>
+							<i className="fas fa-file-pdf"></i>
+							View Resume
+						</a>
 					</div>
 					<br />
 					<Button link='/works' copy='My Works' />
