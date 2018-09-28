@@ -4,8 +4,8 @@ import Button from './button.js';
 class Works extends React.Component {
 	render(){
 		return(
-			<div className='works'>
-				<div className='portfolio'>
+			<div className='Works'>
+				<div className='Portfolio'>
 					<a href='/media/portfolio_junwenchen.pdf' target='_blank'>
 						<i className="fas fa-file-pdf"></i>
 						View Portfolio

@@ -1,10 +1,10 @@
 import React from 'react';
 
 class Footer extends React.Component {
-	render(){
+	render() {
 		return(
-			<div className='footer'>
-				&copy;2018, Junwen Chen
+			<div className='Footer'>
+				&copy; {new Date().getFullYear()} Junwen Chen
 			</div>
 		)
 	}
