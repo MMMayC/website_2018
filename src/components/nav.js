@@ -13,6 +13,7 @@ class Nav extends React.Component {
 			menuItem.classList.toggle('Display--block');
 		});
 		document.getElementById('MenuMobile').classList.toggle('Display--none');
+		document.getElementsByClassName('Menu-List')[0].classList.toggle('Display--block');
 		document.getElementById('MenuMobileClose').classList.toggle('Display--block');
 	}
 	toggleMenuItemActive = (e) => {
