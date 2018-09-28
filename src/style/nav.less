@@ -26,22 +26,35 @@
 			padding: 0;
 			margin: 0;
 			background-color: white;
-			li {
-				display: inline-block;
-			}
 			&-Item {
 				display: none;
+				position: relative;
 				text-align: center;
 				padding: 5px;
 				margin: 10px 5px;
 				color: lighten(@color_primary, 20%);
 				transition: color .4s;
+				overflow: hidden;
 				&:hover, &:focus {
 					color: @color_primary;
 				}
+				&:after {
+					content: '';
+					position: absolute;
+					display: block;
+					padding: 100% 0 0;
+					margin: 2px 0 0 -5px;
+					background-color: @color_primary;
+					opacity: 0;
+					transition: 0s;
+				}
 				&--active {
 					color: @color_primary;
-					border-bottom: 3px solid @color_primary;
+					&:after {
+						padding: 100% 0 0 100%;
+						opacity: 1;
+						transition: all .25s;
+					}
 				}
 			}
 		}
@@ -57,6 +70,9 @@
 			&-List {
 				position: relative;
 				top: 0;
+				li {
+					display: inline-block;
+				}
 				&-Item {
 					display: inline-block;
 				}

@@ -23,15 +23,14 @@
 			z-index: -1;
 		}
 
-		&:hover, &:focus {
-			color: white;
+		&:hover:after, &:focus:after {
+			padding: 300% 0 0 300%;
+			opacity: 1;
 			transition: all .4s;
 		}
 
-		&:hover:after, &:focus:after {
-			padding: 300% 0 0 300%;
-			margin: -100% 0 0;
-			opacity: 1;
+		&:hover, &:focus {
+			color: white;
 			transition: all .4s;
 		}
 	}
