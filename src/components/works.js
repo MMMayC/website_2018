@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Button from './button.js';
 
 class Works extends React.Component {
 	render(){
@@ -9,9 +9,7 @@ class Works extends React.Component {
 					<a href='/media/portfolio_junwenchen.pdf' target='_blank'><i className="fas fa-file-pdf"></i> View Portfolio</a>
 				</div>
 				<br />
-				<div className='button'>
-					<Link to='/contact' className='button_link'>Contact Me</Link>
-				</div>
+				<Button link='/contact' copy='Contact Me' />
 			</div>
 		)
 	}
