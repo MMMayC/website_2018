@@ -32,7 +32,7 @@ class Nav extends React.Component {
 	render() {
 		return(
 			<div className='Nav'>
-				<Link to='/'><img src='media/jc_logo.svg' className='logo' /></Link>
+				<Link to='/'><img src='media/jc_logo.svg' className='Nav-Logo' /></Link>
 				<div className='Menu-Mobile'>
 					<div className='Menu-Mobile-Toggle' id='MenuMobileToggle' onClick={this.toggleMenuMobile}>
 						<i className="fas fa-bars"></i>
