@@ -9,7 +9,7 @@
 			display: block;
 			float: right;
 			text-align: center;
-			color: @color_primary;
+			color: @color-theme-pink;
 			font-size: 150%;
 			&-Toggle, &-Close {
 				display: block;
@@ -37,14 +37,14 @@
 					display: inline-block;
 					padding: 10px;
 					margin: 0;
-					color: lighten(@color_primary, 20%);
+					color: lighten(@color-theme-pink, 20%);
 					transition: color .4s;
 					overflow: hidden;
 					&:hover, &:focus {
-						color: @color_primary;
+						color: @color-theme-pink;
 					}
 					&--active {
-						color: @color_primary;
+						color: @color-theme-pink;
 					}
 				}
 			}
@@ -64,7 +64,7 @@
 			&-Desktop {
 				display: block;
 				float: right;
-				color: @color_primary;
+				color: @color-theme-pink;
 				font-size: 120%;
 				&-List {
 					position: relative;
@@ -83,11 +83,11 @@
 						text-align: center;
 						padding: 5px;
 						margin: 10px 5px;
-						color: lighten(@color_primary, 20%);
+						color: lighten(@color-theme-pink, 20%);
 						transition: color .4s;
 						overflow: hidden;
 						&:hover, &:focus {
-							color: @color_primary;
+							color: @color-theme-pink;
 						}
 						&:after {
 							content: '';
@@ -95,12 +95,12 @@
 							display: block;
 							padding: 100% 0 0;
 							margin: 2px 0 0 -5px;
-							background-color: @color_primary;
+							background-color: @color-theme-pink;
 							opacity: 0;
 							transition: 0s;
 						}
 						&--active {
-							color: @color_primary;
+							color: @color-theme-pink;
 							&:after {
 								padding: 100% 0 0 100%;
 								opacity: 1;

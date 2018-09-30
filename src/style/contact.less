@@ -1,19 +1,15 @@
 .Contact {
-	.Email {
-		&--Link {
-			display: block;
-			width: 210px;
-			text-align: center;
-			margin: 0 auto;
-		}
-	}
-	.Social {
-		width: 105px;
-		display: block;
-		margin: 0 auto;
-		&--Link {
-			padding: 5px;
-			display: inline-block;
-		}
-	}
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: @color-theme-orange;
+    &-Content {
+        display: grid;
+        &-Social {
+            &-Link {
+                margin-right: 5px;
+            }
+        }
+    }
 }

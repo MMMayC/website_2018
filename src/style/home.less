@@ -1,14 +1,24 @@
 .Home {
-    min-height: 600px;
-    position: relative;
-    &-Title {
-        padding-top: 20%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: @color-white;
+    color: @color-dark;
+    margin: 3px;
+    border-color: @color-dark;
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+    align-items: center;
+    justify-items: center;
+    &-Logo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        max-height: 45%;
+        max-width: 45%;
     }
-    &-Subtitle {
-        margin-top: 10%;
-        margin-bottom: 20%;
+    &-Copy {
+        grid-column-start: 2;
+        grid-column-end: 4;
     }
-    @media screen and (min-width: @screen-tablet-min) {
-
-    }   
 }

@@ -1,37 +1,15 @@
 .CTAButton {
-	&--Link {
-		border: 1px solid @color_primary;
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		padding: 10px 0;
-		text-align: center;
-		width: 180px;
-		text-transform: uppercase;
-		// transition: all .25s;
-		overflow: hidden;
+	border: 1px solid @color-white;
+	display: block;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	overflow: hidden;
+	margin: auto;
 
-		&:after {
-			content: '';
-			background-color: @color_primary;
-			display: block;
-			position: absolute;
-			transition: 0s;
-			padding:300% 0 0;
-			margin: -100% 0 0;
-			opacity: 0;
-			z-index: -1;
-		}
-
-		&:hover:after, &:focus:after {
-			padding: 300% 0 0 300%;
-			opacity: 1;
-			transition: all .4s;
-		}
-
-		&:hover, &:focus {
-			color: white;
-			transition: all .4s;
-		}
+	&:hover, &:focus {
+		color: @color-dark;
+		background-color: @color-white;
+		transition: all .4s;
 	}
 }

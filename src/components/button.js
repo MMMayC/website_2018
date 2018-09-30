@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 class Button extends React.Component {
 	render(){
 		return(
-            <div className='CTAButton'>
-                <Link to={this.props.link} className='CTAButton--Link'>{this.props.copy}</Link>
-            </div>
+			<Link to={this.props.link} className={`CTAButton ${this.props.className}`} target='_blank'>
+				{this.props.children} {this.props.copy}
+			</Link>
 		)
 	}
 }

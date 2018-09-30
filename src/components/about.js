@@ -4,22 +4,19 @@ import Button from './button.js';
 class About extends React.Component {
 	render(){
 		return(
-			<div className='About'>
-				<div className='Profile'>
-					<img className='Profile-Photo' src='/media/profile_2018_square.jpg' />
-					<div className='Profile-Intro'>
-						<p>Hi, I'm Junwen. I'm a Web Developer and Experience Designer.</p>
+			<div className='About Grid-Item'>
+				<div className='Grid-Item-Tag'>
+					About
+				</div>
+				<div className='About-Content'>
+					<img className='About-Content-Photo' src='/media/profile_2018_square.jpg' />
+					<Button link='/media/resume_junwenchen.pdf' copy='Resume' className='About-Content-Resume'>
+						<i className="fas fa-file-pdf"></i>
+					</Button>
+					<div className='About-Content-Intro'>
+						<p>Hey, I'm Junwen. I'm a full-stack Web developer and UX designer.</p>
 						<p>I think design and development are both essential in delivering solutions to users, in which one could not exist without the other. I’m passionate about building empathy with people, and designing satisfying experiences for them. I also enjoy developing a lot as it makes things happen and brings design to life.</p>
-						<p>My skills cross a broad range and I'm always up for learning new things.</p>
-					</div>
-					<div className='Profile-Resume'>
-						<a href='/media/resume_junwenchen.pdf' target='_blank'>
-							<i className="fas fa-file-pdf"></i>
-							View Resume
-						</a>
-					</div>
-					<br />
-					<Button link='/works' copy='My Works' />
+					</div>				
 				</div>
 			</div>
 		)
