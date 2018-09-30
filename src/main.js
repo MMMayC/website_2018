@@ -6,13 +6,14 @@ import Home from './components/home.js';
 import About from './components/about.js';
 import Contact from './components/contact.js';
 import Works from './components/works.js';
+import Experience from './components/experience.js';
 import style from './style/index.less';
 
 class Main extends React.Component {
 	render(){
 		return(
 			<div className='Container'>
-				<Nav />
+				{/* <Nav />
 					<div className='Content'>
 					    <Switch>
 							<Route exact path='/' component={Home}/>
@@ -21,7 +22,12 @@ class Main extends React.Component {
 							<Route path='/contact' component={Contact}/>
 					    </Switch>
 				    </div>
-				<Footer />
+				<Footer /> */}
+				<Home />
+				<About />
+				<Experience />
+				<Works />
+				<Contact />
 			</div>
 		)
 	}
