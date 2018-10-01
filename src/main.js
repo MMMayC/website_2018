@@ -12,8 +12,8 @@ class Main extends React.Component {
 		return(
 			<div className='Grid'>
 				<Home />
-				<About />
 				<Experience />
+				<About />
 				<Design />
 				<Development />
 				<BackToTop />
