@@ -4,6 +4,10 @@
     grid-row-start: 1;
     grid-row-end: 3;
     background-color: @color-theme-yellow;
+    &:hover, &:focus {
+        background-color: darken(@color-theme-yellow, @darken-background-color);
+        transition: background-color @hover-transition-duration;
+    }
     &-Content {
         display: grid;
         &-Section {

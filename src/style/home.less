@@ -7,21 +7,17 @@
     color: @color-dark;
     margin: 3px;
     border-color: @color-dark;
-    display: grid;
-    grid-template-columns: repeat(3, calc(100% / 3));
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-items: center;
+    justify-content: space-between;
     &-Logo {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        max-height: 45%;
-        max-width: 45%;
+        flex-grow: 1;
+        max-height: 30%;
+        max-width: 30%;
     }
-    &-Copy {
-        grid-column-start: 2;
-        grid-column-end: 4;
-    }
-    &-Contact {
+    &-Content {
+        flex-grow: 1;
         &-Link {
             color: @color-dark;
         }
