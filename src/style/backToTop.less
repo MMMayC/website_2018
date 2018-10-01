@@ -1,0 +1,24 @@
+.BackToTop {
+    display: block;
+    color: @color-dark;
+    padding-top: 35px;
+    i {
+        margin: 0;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: @color-white;
+        border-radius: 50%;
+        padding: 10px 12px;
+        transition: bottom .4s;
+    }
+
+    .Hide {
+        bottom: -50px;
+        transition: bottom .4s;
+    }
+
+    @media screen and (min-width: @screen-tablet-min) {
+        display: none;
+    }
+}
