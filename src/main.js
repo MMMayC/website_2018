@@ -1,13 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Nav from './components/nav.js';
-import Footer from './components/footer.js';
 import Home from './components/home.js';
 import About from './components/about.js';
-import Contact from './components/contact.js';
-import Portfolio from './components/portfolio.js';
+import Development from './components/development.js';
+import Design from './components/design.js';
 import Experience from './components/experience.js';
-import style from './style/index.less';
+import './style/index.less';
 
 class Main extends React.Component {
 	render(){
@@ -16,8 +13,8 @@ class Main extends React.Component {
 				<Home />
 				<About />
 				<Experience />
-				<Portfolio />
-				<Contact />
+				<Design />
+				<Development />
 			</div>
 		)
 	}
