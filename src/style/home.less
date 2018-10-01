@@ -1,16 +1,11 @@
 .Home {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
     background-color: @color-white;
     color: @color-dark;
     margin: 3px;
     border-color: @color-dark;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     &-Logo {
         flex-grow: 1;
         max-height: 30%;
@@ -18,8 +13,38 @@
     }
     &-Content {
         flex-grow: 1;
+        text-align: center;
         &-Link {
             color: @color-dark;
+        }
+        &-Arrow {
+            position: relative;
+            margin: 0;
+            animation-duration: 1s;
+            animation-name: animated-arrow;
+            animation-iteration-count: infinite;
+            @keyframes animated-arrow {
+                from {
+                    top: 0;
+                }
+                to {
+                    top: 2px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: @screen-tablet-min) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        flex-direction: row;
+        justify-content: space-between;
+        &-Content {
+            text-align: left;
+            &-Arrow {
+                display: none;
+            }
         }
     }
 }

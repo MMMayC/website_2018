@@ -19,6 +19,7 @@ class Home extends React.Component {
 							<i className='fab fa-github-square'></i>
 						</a>
 					</p>
+						<i className="fas fa-angle-double-down Home-Content-Arrow"></i>
 				</div>
 			</div>
 		)
