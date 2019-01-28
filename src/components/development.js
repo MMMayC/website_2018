@@ -5,13 +5,13 @@ class Development extends React.Component {
 		return(
 			<div className='Development Grid-Item'>
 				<div className='Grid-Item-Tag'>
-					Development
+					Coding
 				</div>
 				<div className='Development-Content Grid-Item-Content'>
 					<ul className='Development-Content-Section-Description'>
-						<li>Front-end: Javascript / Less.js / React</li>
-						<li>Back-end: Node.js / .Net</li>
-						<li>Version Control: Git / VSO</li>
+						<li>Large Projects - Good knowledge in software design patterns (SOLID / BEM), source control (Git), continuous integration, etc.</li>
+						<li>Rapid Prototyping - Bringing the ideas to prototypes rapidly with React, Node.js and AWS tools. </li>
+						<li>Creative Coding - Producing generative interactive artworks with p5.js and three.js.</li>
 					</ul>
 				</div>
 			</div>

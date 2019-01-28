@@ -10,8 +10,9 @@ class About extends React.Component {
 				<div className='About-Content Grid-Item-Content'>
 					<img className='About-Content-Photo' src='/media/profile_2018_square.jpg' />
 					<div className='About-Content-Intro'>
-						<p>Hey, I'm Junwen. I'm a full-stack Web developer and UX designer.</p>
-						<p>I think design and development are both essential in delivering solutions to users, in which one could not exist without the other. I’m passionate about building empathy with people, and designing satisfying experiences for them. I also enjoy developing a lot as it makes things happen and brings design to life.</p>
+						<p>Hey, I'm Junwen. I'm a full-stack developer and UX designer.</p>
+						<p>My passion is in building beautiful user experience with high-quality code. I have experience across the board and always up to learn new technologies. With experience in design, I have a keen eye for details and can work collaboratively with designers. In a team, I’m dedicated to Agile methodology and I value clear and open communication.</p>
+						<p>My side husstle is to coach design students coding. I enjoy it because I like helping them to make their cool ideas happen. </p>
 					</div>
 				</div>
 			</div>

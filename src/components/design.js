@@ -9,6 +9,9 @@ class Design extends React.Component {
 					Design
 				</div>
 				<div className='Design-Content Grid-Item-Content'>
+					<div className='Design-Content-Intro'>
+						<p>As a designer, I have been involved in visual design, user experience and public installation projects. I see design as a problem solving process.</p>
+					</div>					
 					<Button link='/media/portfolio_junwenchen.pdf' copy='Portfolio' className='Design-Content-Link'>
 						<i className="fas fa-file-pdf"></i>
 					</Button>

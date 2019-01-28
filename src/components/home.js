@@ -7,7 +7,7 @@ class Home extends React.Component {
 				<img src='media/jc_logo.svg' className='Home-Logo' />
 				<div className='Home-Content'>
 					<h1 className='Home-Content-Title'>Junwen Chen</h1>
-					<p className='Home-Content-Subtitle'>Developer / Designer</p>
+					<p className='Home-Content-Subtitle'>Full-Stack Developer / UX Designer</p>
 					<p className='Home-Content-Email'>
 						<a href='mailto:mayjunwenchen@gmail.com' className='Home-Content-Link'> mayjunwenchen@gmail.com</a>
 					</p>

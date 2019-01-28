@@ -10,23 +10,22 @@ class Experience extends React.Component {
 				</div>
 				<div className='Experience-Content Grid-Item-Content'>
 					<div className='Experience-Content-Section'>
-						<p className='Experience-Content-Section-Title'><i className="fas fa-briefcase"></i>Full-Stack Developer</p>
+						<p className='Experience-Content-Section-Title'><i className="fas fa-briefcase"></i>Full-Stack Engineer</p>
 						<p className='Experience-Content-Section-Subtitle'>
 							<i className="fas fa-building"></i>
-							<a href='https://www.pacificmags.com.au/' target='_blank'>Pacific Magazines</a>
+							<a href='https://www.linkedin.com/company/pacific-magazines/' target='_blank'>Pacific Magazines</a>
 							<i className="fas fa-calendar-alt"></i>Mar 2018 - Present
 						</p>
 						<ul className='Experience-Content-Section-Description'>
-							<li>Working across front-end and back-end</li>
-							<li>Writing qualified code that passes design/coding review</li>
-							<li>Agile & Scrum environment</li>
+							<li>Building content management and E-commerce platform with several languages and frameworks across front-end and back-end (ASP.Net MVC / Node.js / React, etc.)</li>
+							<li>Working collaboratively with developers and designers in an Agile team</li>
 						</ul>
 					</div>
 					<div className='Experience-Content-Section'>
 						<p className='Experience-Content-Section-Title'><i className="fas fa-graduation-cap"></i>Master of Interaction Design</p>
 						<p className='Experience-Content-Section-Subtitle'>
 							<i className="fas fa-building"></i>
-							<a href='https://en.wikipedia.org/wiki/University_of_Sydney' target='_blank'>University of Sydney</a>
+							<a href='https://www.linkedin.com/school/university-of-sydney/' target='_blank'>University of Sydney</a>
 							<i className="fas fa-calendar-alt"></i>Jul 2016 - Jun 2018
 						</p>
 						<ul className='Experience-Content-Section-Description'>
