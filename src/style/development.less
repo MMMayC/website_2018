@@ -10,6 +10,17 @@
         transition: background-color @hover-transition-duration;
     }
     &-Content {
-
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        &-Intro {
+            width: 70%;
+        }
+        &-Projects {
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            // justify-content: flex-end;
+        }
     }
 }
