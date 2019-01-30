@@ -1,18 +1,46 @@
 .Project {
-    background: @color-white;
     display: block;
-    margin: 0 2px;
-    width: calc(100% / 3);
-    color: @color-dark;
     text-decoration: none;
+    padding: 5px;
+    &-1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        margin-right: 6px;
+        border: solid 3px @color-theme-yellow;
+    }
+    &-2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-bottom: 6px;
+        border: solid 3px @color-theme-pink;
+        height: 100%;
+    }
+    &-3 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        border: solid 3px @color-theme-orange;
+    }
     &-Tag {
-        color: @color-theme-orange;
         text-decoration: underline;
+        font-size: 70%;
     }
     &-Name {
     
     }
     &-Tech {
-        
+        font-size: 70%;
+    }
+    &-Thumbnail {
+        width: 100%;
+        border-radius: 50%;
+    }
+    &-Detail {
+        display: none;
     }
 }

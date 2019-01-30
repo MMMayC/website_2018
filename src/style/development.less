@@ -1,6 +1,6 @@
 .Development {
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
     background-color: @color-theme-orange;
@@ -8,19 +8,5 @@
     &:hover, &:focus {
         background-color: darken(@color-theme-orange, @darken-background-color);
         transition: background-color @hover-transition-duration;
-    }
-    &-Content {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        &-Intro {
-            width: 70%;
-        }
-        &-Projects {
-            width: 30%;
-            display: flex;
-            flex-direction: row;
-            // justify-content: flex-end;
-        }
     }
 }

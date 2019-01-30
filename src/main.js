@@ -6,6 +6,7 @@ import Development from './components/development.js';
 import Design from './components/design.js';
 import Experience from './components/experience.js';
 import BackToTop from './components/backToTop.js';
+import Projects from './components/projects';
 
 class Main extends React.Component {
 	render(){
@@ -16,6 +17,7 @@ class Main extends React.Component {
 				<About />
 				<Design />
 				<Development />
+				<Projects />
 				<BackToTop />
 			</div>
 		)
