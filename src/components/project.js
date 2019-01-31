@@ -9,8 +9,13 @@ class Project extends React.Component {
 		if (this.props.problem) {
 			projectDetail = 
 			<div className="Project-Detail">
+				<div className="Project-Detail-Title">{this.props.name}</div>
+				<div className="Project-Detail-Header">Problem</div>
 				<div className="Project-Detail-Problem">{this.props.problem}</div>
+				<div className="Project-Detail-Header">Solution</div>
 				<div className="Project-Detail-Solution">{this.props.solution}</div>
+				<div className="Project-Detail-Header">Tech Stack</div>
+				<div className="Project-Detail-Tech">{this.props.tech}</div>
 			</div>
 		}
 		return(
@@ -18,7 +23,6 @@ class Project extends React.Component {
 				<div className="Project-Info">
 					<div className="Project-Info-Tag">{this.props.tag}</div>
 					<div className="Project-Info-Name">{this.props.name}</div>
-					{/* <img src={this.props.thumbnail} alt={this.props.thumbnail} className="Project-Thumbnail" /> */}
 					<div className='Project-Info-Tech'>{this.props.tech}</div>
 				</div>
 				{projectDetail}

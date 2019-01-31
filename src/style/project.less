@@ -31,16 +31,32 @@
     }
     &-Info {
         background-color: @color-project-bg;
-        padding: 5px;
+        padding: 10px;
         overflow: hidden;
         height: 100%;
         color: @color-white;
+        transition: background-color @hover-transition-duration;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-sizing: border-box;
+        align-items: stretch;
+        &:hover, &:focus {
+            background-color: @color-project-bg-hover;
+            transition: background-color @hover-transition-duration;
+            .Project-Info-Enter {
+                transition: opacity @hover-transition-duration;
+                opacity: 1;
+            }
+        }    
         &-Tag {
             text-decoration: underline;
             font-size: 70%;
         }
         &-Name {
-        
+            flex-grow: 1;
+            font-size: 120%;
+            line-height: 250%;
         }
         &-Tech {
             font-size: 70%;
@@ -49,8 +65,8 @@
             width: 100%;
             border-radius: 50%;
         }
-        &-Detail {
-            display: none;
-        }
-        }
+    }
+    &-Detail {
+        display: none;
+    }
 }
