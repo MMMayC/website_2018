@@ -15,10 +15,12 @@ class Project extends React.Component {
 		}
 		return(
 			<a href={this.props.link} className={`Project Project-${this.props.order}`} target='_blank'>
-                <div className="Project-Tag">{this.props.tag}</div>
-                <div className="Project-Name">{this.props.name}</div>
-				{/* <img src={this.props.thumbnail} alt={this.props.thumbnail} className="Project-Thumbnail" /> */}
-                <div className='Project-Tech'>{this.props.tech}</div>
+				<div className="Project-Info">
+					<div className="Project-Info-Tag">{this.props.tag}</div>
+					<div className="Project-Info-Name">{this.props.name}</div>
+					{/* <img src={this.props.thumbnail} alt={this.props.thumbnail} className="Project-Thumbnail" /> */}
+					<div className='Project-Info-Tech'>{this.props.tech}</div>
+				</div>
 				{projectDetail}
 			</a>
 		)
