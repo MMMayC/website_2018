@@ -17,7 +17,7 @@ class Experience extends React.Component {
 							<i className="fas fa-calendar-alt"></i>Mar 2018 - Present
 						</p>
 						<ul className='Experience-Content-Section-Description'>
-							<li>Building content management and E-commerce platform with several languages and frameworks across front-end and back-end (ASP.Net MVC / Node.js / React, etc.)</li>
+							<li>Building content management and E-commerce platform across front-end and back-end (ASP.Net MVC / Node.js / React, etc.)</li>
 							<li>Working collaboratively with developers and designers in an Agile team</li>
 						</ul>
 					</div>

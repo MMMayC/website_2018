@@ -10,6 +10,13 @@
         grid-row-end: 3;
         border-right: 3px solid @color-white;
         background-image: url("../images/project_gnashes.jpg");
+        &:hover, &:focus {
+            .Project-Detail {
+                z-index: 1;
+                opacity: 1;
+                transition: all @hover-transition-duration;    
+            }
+        }
     }
     &-2 {
         grid-column-start: 2;
@@ -54,9 +61,11 @@
             font-size: 70%;
         }
         &-Name {
-            flex-grow: 1;
             font-size: 120%;
             line-height: 250%;
+        }
+        &-Intro {
+            flex-grow: 1;
         }
         &-Tech {
             font-size: 70%;
@@ -68,5 +77,29 @@
     }
     &-Detail {
         display: none;
+        @media screen and (min-width: @screen-tablet-min) {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            background-color: #333333;
+            opacity: 0;
+            z-index: -1;
+            top: calc(100% / 3);
+            left: calc(100% / 3);
+            height: calc(100% * 2 / 3);
+            width: calc(100% / 3);
+            border: solid 3px white;
+            padding: 10px;
+            &-Header {
+                font-weight: bold;
+                font-size: 120%;
+            }
+            ul {
+                margin-top: 8px;
+            }
+            &-Problem, &-Solution, &-Tech {
+                margin-bottom: 15px;
+            }
+        }
     }
 }

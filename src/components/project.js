@@ -9,13 +9,20 @@ class Project extends React.Component {
 		if (this.props.problem) {
 			projectDetail = 
 			<div className="Project-Detail">
-				<div className="Project-Detail-Title">{this.props.name}</div>
-				<div className="Project-Detail-Header">Problem</div>
-				<div className="Project-Detail-Problem">{this.props.problem}</div>
-				<div className="Project-Detail-Header">Solution</div>
-				<div className="Project-Detail-Solution">{this.props.solution}</div>
+				<div className="Project-Detail-Header">The Problem</div>
+				<div className="Project-Detail-Problem">
+					{this.props.problem.map(each => {
+						return <p>{each}</p>
+					})}
+				</div>
+				<div className="Project-Detail-Header">The Solution</div>
+				<ul className="Project-Detail-Solution">
+					{this.props.solution.map(each => {
+						return <li>{each}</li>
+					})}
+				</ul>
 				<div className="Project-Detail-Header">Tech Stack</div>
-				<div className="Project-Detail-Tech">{this.props.tech}</div>
+				<div className="Project-Detail-Tech"><p>{this.props.stack}</p></div>
 			</div>
 		}
 		return(
@@ -23,6 +30,7 @@ class Project extends React.Component {
 				<div className="Project-Info">
 					<div className="Project-Info-Tag">{this.props.tag}</div>
 					<div className="Project-Info-Name">{this.props.name}</div>
+					<div className="Project-Info-Intro">{this.props.intro}</div>
 					<div className='Project-Info-Tech'>{this.props.tech}</div>
 				</div>
 				{projectDetail}

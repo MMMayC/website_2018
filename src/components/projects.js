@@ -11,7 +11,17 @@ class Projects extends React.Component {
                 tech="React / Node.js / Serverless"
                 link="http://gnashes.junwenchen.com"
                 thumbnail="media/project_gnashes.jpg"
-                problem="Problem" />
+                intro="The Gnashes is an application that makes team nomination and award announcement easier."
+                problem={[
+                    "At work, we have an award called The Gnashes which recognises people's contribution in our team. Basically, the nomination runs every two weeks and the person receives the most nominations gets a trophy.", 
+                    "However we use a very plain google form for nomination, also the data is in poor format so it's hard to sort (e.g. the candidate name might be 'Alex' or 'alex'), the manager needs to spend ~30 mins to put together a slides for announcement."
+                ]}
+                solution={[
+                    "Simple and beautiful interface for better nominating experience.", 
+                    "Sort the nominations by a click to reduce the time spent."
+                ]}
+                stack= "React / Node.js / Express / Serverless / AWS DynamoDB / S3"
+                />
                 <Project
                 order="2"
                 tag="Creative"
