@@ -13,11 +13,11 @@ class Projects extends React.Component {
                 thumbnail="media/project_gnashes.jpg"
                 intro="The Gnashes is an application that makes team nomination and award announcement easier."
                 problem={[
-                    "At work, we have an award called The Gnashes which recognises people's contribution in our team. Basically, the nomination runs every two weeks and the person receives the most nominations gets a trophy.", 
-                    "However we use a very plain google form for nomination, also the data is in poor format so it's hard to sort (e.g. the candidate name might be 'Alex' or 'alex'), the manager needs to spend ~30 mins to put together a slides for announcement."
+                    "At work, we have an award called The Gnashes which recognises people's contribution in our team. Every two weeks, a trophy is presented to the person who receives the most nominations.", 
+                    "However, an unispired Google form was used for the nomination process, and the data used was poorly stored and therefore was difficult to sorted and presented badly. This meant that the manager regularly spent ~30 minutes just putting slides together for an announcement."
                 ]}
                 solution={[
-                    "Simple and beautiful interface for better nominating experience.", 
+                    "Simple and beautiful interface for a better nominating experience.", 
                     "Sort the nominations by a click to reduce the time spent."
                 ]}
                 stack= "React / Node.js / Express / Serverless / AWS DynamoDB / S3"
